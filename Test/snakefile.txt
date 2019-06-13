@@ -1,0 +1,107 @@
+Samples = "M3023_psoriatic M3822_psoriatic M9036_normal M9037_normal M9048_normal M953_psoriatic".split()
+Groups = "psoriaticVSnormal".split()
+adapter1 = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+adapter2 = "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+rule All:
+	input:
+		expand("/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Transcript/Transcript.G-enrich.pdf", group=Groups),
+        expand("/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Gene/Gene.G-enrich.pdf", group=Groups)
+
+rule QC:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/{sample}.fastq.gz"
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/{sample}.clean.fastq"
+	log:
+		e = "logs/{sample}.qc.e", o = "logs/{sample}.qc.o"
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/fastp -i {input} -o {output}  --adapter_sequence {adapter1} -w {threads} -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/{wildcards.sample}_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/{wildcards.sample}_QC_report.html"
+
+rule Align:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/{sample}.clean.fastq"
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/{sample}/{sample}.Aligned.sortedByCoord.out.bam"
+	log:
+		e = "logs/{sample}.align.e", o = "logs/{sample}.align.o"
+	threads: 4
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn {input} --runThreadN {threads} --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/{wildcards.sample}/{wildcards.sample}. 1>{log.o} 2>{log.e}"
+
+rule Assemble:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/{sample}/{sample}.Aligned.sortedByCoord.out.bam"
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/{sample}/{sample}.gtf"
+	log:
+		e = "logs/{sample}.as.e", o = "logs/{sample}.as.o"
+	threads: 4
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l {wildcards.sample} -o {output} -p {threads} {input} 1>{log.o} 2>{log.e}"
+
+rule Merge:
+	input:
+		expand("/home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/{sample}/{sample}.gtf", sample=Samples)
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf"
+	log:
+		e = "logs/merge.e", o = "logs/merge.o"
+	threads: 1
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/stringtie --merge -p {threads} -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -o {output} /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3023_psoriatic/M3023_psoriatic.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3822_psoriatic/M3822_psoriatic.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9036_normal/M9036_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9037_normal/M9037_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9048_normal/M9048_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M953_psoriatic/M953_psoriatic.gtf 1>{log.o} 2>{log.e}"
+
+rule Compare:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf"
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/merged.stats"
+	log:
+		e = "logs/compare.e", o = "logs/compare.o"
+	threads: 1
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/gffcompare -r /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -G -o /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/merged {input} 1>{log.o} 2>{log.e}"
+
+rule Quantification:
+	input:
+		gtf = "/home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf", bam = "/home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/{sample}/{sample}.Aligned.sortedByCoord.out.bam"
+	output:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/{sample}/{sample}_merged.gtf"
+	log:
+		e = "logs/{sample}.quant.e", o = "logs/{sample}.quant.o"
+	threads: 2
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p {threads} -G {input.gtf} -o {output} {input.bam} 1>{log.o} 2>{log.e}"
+
+rule Diff:
+	input:
+		expand("/home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/{sample}/{sample}_merged.gtf", sample=Samples)
+	output:
+		A = "/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/{group}/results_genes_0.05.csv", B = "/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/{group}/transcript_results_0.05.csv"
+	log:
+		e = "logs/{group}.diff.e", o = "logs/{group}.diff.o"
+	threads: 1
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>{log.o} 2>{log.e}"
+
+rule EnrichGene:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/{group}/results_genes_0.05.csv"
+	output:
+		A = "/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Gene/Gene.G-enrich.pdf", B = "/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Gene/Gene.K-enrich.pdf"
+	log:
+		e = "logs/{group}.enrichgene.e", o = "logs/{group}.enrichgene.o"
+	threads: 1
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/Rscript /home/lixuefei/Pipeline/RNASeq/Lib/enrich.R /home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{wildcards.group}/Gene {input} 1>{log.o} 2>{log.e}"
+
+rule EnrichT:
+	input:
+		"/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/{group}/transcript_results_0.05.csv"
+	output:
+		A = "/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Transcript/Transcript.G-enrich.pdf", B = "/home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{group}/Transcript/Transcript.K-enrich.pdf"
+	log:
+		e = "logs/{group}.enricht.e", o = "logs/{group}.enricht.o"
+	threads: 1
+	shell:
+		"/home/lixuefei/Pipeline/RNASeq/Software/Rscript /home/lixuefei/Pipeline/RNASeq/Lib/enrich.R /home/lixuefei/Pipeline/RNASeq/Test/V2/7.Enrich/{wildcards.group}/Transcript {input} 1>{log.o} 2>{log.e}"
+

@@ -1,0 +1,1 @@
+/home/lixuefei/Pipeline/RNASeq/Software/snakemake --cores 10 --printshellcmds --snakefile snakefile.txt

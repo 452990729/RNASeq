@@ -1,0 +1,246 @@
+.
+├── 0.RawData
+│   ├── M3023_psoriatic.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M3023_psoriatic.fastq.gz
+│   ├── M3822_psoriatic.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M3822_psoriatic.fastq.gz
+│   ├── M9036_normal.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M9036_normal.fastq.gz
+│   ├── M9037_normal.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M9037_normal.fastq.gz
+│   ├── M9048_normal.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M9048_normal.fastq.gz
+│   └── M953_psoriatic.fastq.gz -> /home/lixuefei/Pipeline/RNASeq/Test/RawData/M953_psoriatic.fastq.gz
+├── 1.QC
+│   ├── M3023_psoriatic.clean.fastq
+│   ├── M3023_psoriatic_QC_report.html
+│   ├── M3023_psoriatic_QC_report.json
+│   ├── M3822_psoriatic.clean.fastq
+│   ├── M3822_psoriatic_QC_report.html
+│   ├── M3822_psoriatic_QC_report.json
+│   ├── M9036_normal.clean.fastq
+│   ├── M9036_normal_QC_report.html
+│   ├── M9036_normal_QC_report.json
+│   ├── M9037_normal.clean.fastq
+│   ├── M9037_normal_QC_report.html
+│   ├── M9037_normal_QC_report.json
+│   ├── M9048_normal.clean.fastq
+│   ├── M9048_normal_QC_report.html
+│   ├── M9048_normal_QC_report.json
+│   ├── M953_psoriatic.clean.fastq
+│   ├── M953_psoriatic_QC_report.html
+│   └── M953_psoriatic_QC_report.json
+├── 2.Align
+│   ├── M3023_psoriatic
+│   │   ├── M3023_psoriatic.Aligned.sortedByCoord.out.bam
+│   │   ├── M3023_psoriatic.Log.final.out
+│   │   ├── M3023_psoriatic.Log.out
+│   │   ├── M3023_psoriatic.Log.progress.out
+│   │   └── M3023_psoriatic.SJ.out.tab
+│   ├── M3822_psoriatic
+│   │   ├── M3822_psoriatic.Aligned.sortedByCoord.out.bam
+│   │   ├── M3822_psoriatic.Log.final.out
+│   │   ├── M3822_psoriatic.Log.out
+│   │   ├── M3822_psoriatic.Log.progress.out
+│   │   └── M3822_psoriatic.SJ.out.tab
+│   ├── M9036_normal
+│   │   ├── M9036_normal.Aligned.sortedByCoord.out.bam
+│   │   ├── M9036_normal.Log.final.out
+│   │   ├── M9036_normal.Log.out
+│   │   ├── M9036_normal.Log.progress.out
+│   │   └── M9036_normal.SJ.out.tab
+│   ├── M9037_normal
+│   │   ├── M9037_normal.Aligned.sortedByCoord.out.bam
+│   │   ├── M9037_normal.Log.final.out
+│   │   ├── M9037_normal.Log.out
+│   │   ├── M9037_normal.Log.progress.out
+│   │   └── M9037_normal.SJ.out.tab
+│   ├── M9048_normal
+│   │   ├── M9048_normal.Aligned.sortedByCoord.out.bam
+│   │   ├── M9048_normal.Log.final.out
+│   │   ├── M9048_normal.Log.out
+│   │   ├── M9048_normal.Log.progress.out
+│   │   └── M9048_normal.SJ.out.tab
+│   └── M953_psoriatic
+│       ├── M953_psoriatic.Aligned.sortedByCoord.out.bam
+│       ├── M953_psoriatic.Log.final.out
+│       ├── M953_psoriatic.Log.out
+│       ├── M953_psoriatic.Log.progress.out
+│       └── M953_psoriatic.SJ.out.tab
+├── 3.Assemble
+│   ├── M3023_psoriatic
+│   │   └── M3023_psoriatic.gtf
+│   ├── M3822_psoriatic
+│   │   └── M3822_psoriatic.gtf
+│   ├── M9036_normal
+│   │   └── M9036_normal.gtf
+│   ├── M9037_normal
+│   │   └── M9037_normal.gtf
+│   ├── M9048_normal
+│   │   └── M9048_normal.gtf
+│   └── M953_psoriatic
+│       └── M953_psoriatic.gtf
+├── 4.Merge
+│   └── stringtie_merged.gtf
+├── 5.Quantification
+│   ├── M3023_psoriatic
+│   │   ├── e2t.ctab
+│   │   ├── e_data.ctab
+│   │   ├── i2t.ctab
+│   │   ├── i_data.ctab
+│   │   ├── M3023_psoriatic_merged.gtf
+│   │   └── t_data.ctab
+│   ├── M3822_psoriatic
+│   │   ├── e2t.ctab
+│   │   ├── e_data.ctab
+│   │   ├── i2t.ctab
+│   │   ├── i_data.ctab
+│   │   ├── M3822_psoriatic -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic
+│   │   ├── M3822_psoriatic_merged.gtf
+│   │   └── t_data.ctab
+│   ├── M9036_normal
+│   │   ├── e2t.ctab
+│   │   ├── e_data.ctab
+│   │   ├── i2t.ctab
+│   │   ├── i_data.ctab
+│   │   ├── M9036_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal
+│   │   ├── M9036_normal_merged.gtf
+│   │   └── t_data.ctab
+│   ├── M9037_normal
+│   │   ├── e2t.ctab
+│   │   ├── e_data.ctab
+│   │   ├── i2t.ctab
+│   │   ├── i_data.ctab
+│   │   ├── M9037_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal
+│   │   ├── M9037_normal_merged.gtf
+│   │   └── t_data.ctab
+│   ├── M9048_normal
+│   │   ├── e2t.ctab
+│   │   ├── e_data.ctab
+│   │   ├── i2t.ctab
+│   │   ├── i_data.ctab
+│   │   ├── M9048_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal
+│   │   ├── M9048_normal_merged.gtf
+│   │   └── t_data.ctab
+│   └── M953_psoriatic
+│       ├── e2t.ctab
+│       ├── e_data.ctab
+│       ├── i2t.ctab
+│       ├── i_data.ctab
+│       ├── M953_psoriatic -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic
+│       ├── M953_psoriatic_merged.gtf
+│       └── t_data.ctab
+├── 6.Diff
+│   └── psoriaticVSnormal
+│       ├── psoriaticVSnormal.lst
+│       ├── rawdata
+│       │   ├── M3023_psoriatic -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic
+│       │   ├── M3822_psoriatic -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic
+│       │   ├── M9036_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal
+│       │   ├── M9037_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal
+│       │   ├── M9048_normal -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal
+│       │   └── M953_psoriatic -> /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic
+│       ├── results_genes_0.05.csv
+│       ├── results_genes.csv
+│       ├── transcript_results_0.05.csv
+│       └── transcript_results.csv
+├── 7.Enrich
+│   └── psoriaticVSnormal
+│       ├── Gene
+│       │   ├── Gene.G-enrich.csv
+│       │   ├── Gene.G-enrich.pdf
+│       │   ├── Gene.K-enrich.csv
+│       │   └── Gene.K-enrich.pdf
+│       └── Transcript
+│           ├── Transcript.G-enrich.csv
+│           ├── Transcript.G-enrich.pdf
+│           ├── Transcript.K-enrich.csv
+│           └── Transcript.K-enrich.pdf
+├── logs
+│   ├── a.diff.e
+│   ├── a.diff.o
+│   ├── c.diff.e
+│   ├── c.diff.o
+│   ├── i.diff.e
+│   ├── i.diff.o
+│   ├── l.diff.e
+│   ├── l.diff.o
+│   ├── M3023_psoriatic.align.e
+│   ├── M3023_psoriatic.align.o
+│   ├── M3023_psoriatic.as.e
+│   ├── M3023_psoriatic.as.o
+│   ├── M3023_psoriatic.qc.e
+│   ├── M3023_psoriatic.qc.o
+│   ├── M3023_psoriatic.quant.e
+│   ├── M3023_psoriatic.quant.o
+│   ├── M3822_psoriatic.align.e
+│   ├── M3822_psoriatic.align.o
+│   ├── M3822_psoriatic.as.e
+│   ├── M3822_psoriatic.as.o
+│   ├── M3822_psoriatic.qc.e
+│   ├── M3822_psoriatic.qc.o
+│   ├── M3822_psoriatic.quant.e
+│   ├── M3822_psoriatic.quant.o
+│   ├── M9036_normal.align.e
+│   ├── M9036_normal.align.o
+│   ├── M9036_normal.as.e
+│   ├── M9036_normal.as.o
+│   ├── M9036_normal.qc.e
+│   ├── M9036_normal.qc.o
+│   ├── M9036_normal.quant.e
+│   ├── M9036_normal.quant.o
+│   ├── M9037_normal.align.e
+│   ├── M9037_normal.align.o
+│   ├── M9037_normal.as.e
+│   ├── M9037_normal.as.o
+│   ├── M9037_normal.qc.e
+│   ├── M9037_normal.qc.o
+│   ├── M9037_normal.quant.e
+│   ├── M9037_normal.quant.o
+│   ├── M9048_normal.align.e
+│   ├── M9048_normal.align.o
+│   ├── M9048_normal.as.e
+│   ├── M9048_normal.as.o
+│   ├── M9048_normal.qc.e
+│   ├── M9048_normal.qc.o
+│   ├── M9048_normal.quant.e
+│   ├── M9048_normal.quant.o
+│   ├── M953_psoriatic.align.e
+│   ├── M953_psoriatic.align.o
+│   ├── M953_psoriatic.as.e
+│   ├── M953_psoriatic.as.o
+│   ├── M953_psoriatic.qc.e
+│   ├── M953_psoriatic.qc.o
+│   ├── M953_psoriatic.quant.e
+│   ├── M953_psoriatic.quant.o
+│   ├── m.diff.e
+│   ├── m.diff.o
+│   ├── merge.e
+│   ├── merge.o
+│   ├── n.diff.e
+│   ├── n.diff.o
+│   ├── o.diff.e
+│   ├── o.diff.o
+│   ├── psoriaticVSnormal.diff.e
+│   ├── psoriaticVSnormal.diff.o
+│   ├── psoriaticVSnormal.enrichgene.e
+│   ├── psoriaticVSnormal.enrichgene.o
+│   ├── psoriaticVSnormal.enricht.e
+│   ├── psoriaticVSnormal.enricht.o
+│   ├── r.diff.e
+│   ├── r.diff.o
+│   ├── s.diff.e
+│   ├── s.diff.o
+│   ├── t.diff.e
+│   └── t.diff.o
+├── nohup.out
+├── RawData
+│   ├── M3023_psoriatic.fastq.gz
+│   ├── M3822_psoriatic.fastq.gz
+│   ├── M9036_normal.fastq.gz
+│   ├── M9037_normal.fastq.gz
+│   ├── M9048_normal.fastq.gz
+│   └── M953_psoriatic.fastq.gz
+├── reads.lst
+├── run.sh
+├── runsnake.sh
+├── snakefile.txt
+├── snake.log
+└── tree.txt
+
+33 directories, 210 files

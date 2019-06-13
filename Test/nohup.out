@@ -1,0 +1,698 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	6	Align
+	1	All
+	6	Assemble
+	12	Diff
+	12	EnrichT
+	1	Merge
+	6	QC
+	6	Quantification
+	50
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9048_normal.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal.clean.fastq
+    log: logs/M9048_normal.qc.e, logs/M9048_normal.qc.o
+    jobid: 48
+    wildcards: sample=M9048_normal
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9048_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.html
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3822_psoriatic.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic.clean.fastq
+    log: logs/M3822_psoriatic.qc.e, logs/M3822_psoriatic.qc.o
+    jobid: 45
+    wildcards: sample=M3822_psoriatic
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3822_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.html
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M953_psoriatic.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic.clean.fastq
+    log: logs/M953_psoriatic.qc.e, logs/M953_psoriatic.qc.o
+    jobid: 49
+    wildcards: sample=M953_psoriatic
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M953_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.html
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9036_normal.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal.clean.fastq
+    log: logs/M9036_normal.qc.e, logs/M9036_normal.qc.o
+    jobid: 46
+    wildcards: sample=M9036_normal
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9036_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.html
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3023_psoriatic.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic.clean.fastq
+    log: logs/M3023_psoriatic.qc.e, logs/M3023_psoriatic.qc.o
+    jobid: 44
+    wildcards: sample=M3023_psoriatic
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3023_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.html
+
+[Thu Jun 13 14:36:25 2019]
+rule QC:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9037_normal.fastq.gz
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal.clean.fastq
+    log: logs/M9037_normal.qc.e, logs/M9037_normal.qc.o
+    jobid: 47
+    wildcards: sample=M9037_normal
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9037_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal.clean.fastq  --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.html
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 52836944(66.8822%)
+Q30 bases: 46953979(59.4354%)
+
+Read1 after filtering:
+total reads: 680484
+total bases: 53727812
+Q20 bases: 50620638(94.2168%)
+Q30 bases: 45592192(84.8577%)
+
+Filtering result:
+reads passed filter: 680484
+reads failed due to low quality: 318427
+reads failed due to too many N: 1089
+reads failed due to too short: 0
+reads with adapter trimmed: 4513
+bases trimmed due to adapters: 37648
+
+Duplication rate (may be overestimated since this is SE data): 12.4167%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9037_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal_QC_report.html 
+fastp v0.20.0, time used: 12 seconds
+[Thu Jun 13 14:36:38 2019]
+Finished job 47.
+1 of 50 steps (2%) done
+
+[Thu Jun 13 14:36:38 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal.Aligned.sortedByCoord.out.bam
+    log: logs/M9037_normal.align.e, logs/M9037_normal.align.o
+    jobid: 35
+    wildcards: sample=M9037_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9037_normal.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal. 1>logs/M9037_normal.align.o 2>logs/M9037_normal.align.e
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 61128626(77.378%)
+Q30 bases: 58612918(74.1936%)
+
+Read1 after filtering:
+total reads: 750646
+total bases: 59085353
+Q20 bases: 56857945(96.2302%)
+Q30 bases: 54745773(92.6554%)
+
+Filtering result:
+reads passed filter: 750646
+reads failed due to low quality: 247612
+reads failed due to too many N: 1742
+reads failed due to too short: 0
+reads with adapter trimmed: 25345
+bases trimmed due to adapters: 225272
+
+Duplication rate (may be overestimated since this is SE data): 30.9183%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3822_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic_QC_report.html 
+fastp v0.20.0, time used: 14 seconds
+[Thu Jun 13 14:36:39 2019]
+Finished job 45.
+2 of 50 steps (4%) done
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 61381769(77.6984%)
+Q30 bases: 57211880(72.4201%)
+
+Read1 after filtering:
+total reads: 771378
+total bases: 60869623
+Q20 bases: 58464013(96.0479%)
+Q30 bases: 54851887(90.1137%)
+
+Filtering result:
+reads passed filter: 771378
+reads failed due to low quality: 227153
+reads failed due to too many N: 1469
+reads failed due to too short: 0
+reads with adapter trimmed: 8818
+bases trimmed due to adapters: 77722
+
+Duplication rate (may be overestimated since this is SE data): 23.9214%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M3023_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic_QC_report.html 
+fastp v0.20.0, time used: 15 seconds
+[Thu Jun 13 14:36:40 2019]
+Finished job 44.
+3 of 50 steps (6%) done
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 57431881(72.6986%)
+Q30 bases: 51977249(65.794%)
+
+Read1 after filtering:
+total reads: 741959
+total bases: 58585133
+Q20 bases: 55714667(95.1004%)
+Q30 bases: 50921173(86.9183%)
+
+Filtering result:
+reads passed filter: 741959
+reads failed due to low quality: 256997
+reads failed due to too many N: 1044
+reads failed due to too short: 0
+reads with adapter trimmed: 4257
+bases trimmed due to adapters: 35027
+
+Duplication rate (may be overestimated since this is SE data): 14.6245%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9036_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal_QC_report.html 
+fastp v0.20.0, time used: 16 seconds
+[Thu Jun 13 14:36:41 2019]
+Finished job 46.
+4 of 50 steps (8%) done
+
+[Thu Jun 13 14:36:41 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic.Aligned.sortedByCoord.out.bam
+    log: logs/M3023_psoriatic.align.e, logs/M3023_psoriatic.align.o
+    jobid: 32
+    wildcards: sample=M3023_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3023_psoriatic.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic. 1>logs/M3023_psoriatic.align.o 2>logs/M3023_psoriatic.align.e
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 61143541(77.3969%)
+Q30 bases: 58566893(74.1353%)
+
+Read1 after filtering:
+total reads: 730956
+total bases: 57522068
+Q20 bases: 55873336(97.1337%)
+Q30 bases: 53692191(93.3419%)
+
+Filtering result:
+reads passed filter: 730956
+reads failed due to low quality: 267340
+reads failed due to too many N: 1704
+reads failed due to too short: 0
+reads with adapter trimmed: 25079
+bases trimmed due to adapters: 235333
+
+Duplication rate (may be overestimated since this is SE data): 30.1815%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M953_psoriatic.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic_QC_report.html 
+fastp v0.20.0, time used: 17 seconds
+[Thu Jun 13 14:36:42 2019]
+Finished job 49.
+5 of 50 steps (10%) done
+Read1 before filtering:
+total reads: 1000000
+total bases: 79000000
+Q20 bases: 58335757(73.8427%)
+Q30 bases: 53051385(67.1537%)
+
+Read1 after filtering:
+total reads: 750842
+total bases: 59284722
+Q20 bases: 56356762(95.0612%)
+Q30 bases: 51794727(87.3661%)
+
+Filtering result:
+reads passed filter: 750842
+reads failed due to low quality: 248064
+reads failed due to too many N: 1094
+reads failed due to too short: 0
+reads with adapter trimmed: 4463
+bases trimmed due to adapters: 36889
+
+Duplication rate (may be overestimated since this is SE data): 13.6943%
+
+JSON report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.json
+HTML report: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.html
+
+/home/lixuefei/Pipeline/RNASeq/Software/fastp -i /home/lixuefei/Pipeline/RNASeq/Test/V2/0.RawData/M9048_normal.fastq.gz -o /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal.clean.fastq --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -w 1 -j /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.json -h /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal_QC_report.html 
+fastp v0.20.0, time used: 17 seconds
+[Thu Jun 13 14:36:42 2019]
+Finished job 48.
+6 of 50 steps (12%) done
+[Thu Jun 13 14:37:47 2019]
+Finished job 35.
+7 of 50 steps (14%) done
+
+[Thu Jun 13 14:37:47 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal.Aligned.sortedByCoord.out.bam
+    log: logs/M9048_normal.align.e, logs/M9048_normal.align.o
+    jobid: 36
+    wildcards: sample=M9048_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9048_normal.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal. 1>logs/M9048_normal.align.o 2>logs/M9048_normal.align.e
+[Thu Jun 13 14:37:48 2019]
+Finished job 32.
+8 of 50 steps (16%) done
+
+[Thu Jun 13 14:37:48 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic.Aligned.sortedByCoord.out.bam
+    log: logs/M3822_psoriatic.align.e, logs/M3822_psoriatic.align.o
+    jobid: 33
+    wildcards: sample=M3822_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M3822_psoriatic.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic. 1>logs/M3822_psoriatic.align.o 2>logs/M3822_psoriatic.align.e
+[Thu Jun 13 14:38:18 2019]
+Finished job 36.
+9 of 50 steps (18%) done
+
+[Thu Jun 13 14:38:18 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal.Aligned.sortedByCoord.out.bam
+    log: logs/M9036_normal.align.e, logs/M9036_normal.align.o
+    jobid: 34
+    wildcards: sample=M9036_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M9036_normal.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal. 1>logs/M9036_normal.align.o 2>logs/M9036_normal.align.e
+[Thu Jun 13 14:38:21 2019]
+Finished job 33.
+10 of 50 steps (20%) done
+
+[Thu Jun 13 14:38:21 2019]
+rule Align:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic.clean.fastq
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic.Aligned.sortedByCoord.out.bam
+    log: logs/M953_psoriatic.align.e, logs/M953_psoriatic.align.o
+    jobid: 37
+    wildcards: sample=M953_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/STAR --readFilesIn /home/lixuefei/Pipeline/RNASeq/Test/V2/1.QC/M953_psoriatic.clean.fastq --runThreadN 4 --outSAMtype BAM SortedByCoordinate --outSAMstrandField intronMotif --genomeDir /home/lixuefei/Pipeline/RNASeq/Database/hg19 --outFileNamePrefix /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic. 1>logs/M953_psoriatic.align.o 2>logs/M953_psoriatic.align.e
+[Thu Jun 13 14:38:49 2019]
+Finished job 34.
+11 of 50 steps (22%) done
+
+[Thu Jun 13 14:38:49 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9048_normal/M9048_normal.gtf
+    log: logs/M9048_normal.as.e, logs/M9048_normal.as.o
+    jobid: 42
+    wildcards: sample=M9048_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M9048_normal -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9048_normal/M9048_normal.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal.Aligned.sortedByCoord.out.bam 1>logs/M9048_normal.as.o 2>logs/M9048_normal.as.e
+[Thu Jun 13 14:38:54 2019]
+Finished job 37.
+12 of 50 steps (24%) done
+
+[Thu Jun 13 14:38:54 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9036_normal/M9036_normal.gtf
+    log: logs/M9036_normal.as.e, logs/M9036_normal.as.o
+    jobid: 40
+    wildcards: sample=M9036_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M9036_normal -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9036_normal/M9036_normal.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal.Aligned.sortedByCoord.out.bam 1>logs/M9036_normal.as.o 2>logs/M9036_normal.as.e
+[Thu Jun 13 14:38:59 2019]
+Finished job 42.
+13 of 50 steps (26%) done
+
+[Thu Jun 13 14:38:59 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9037_normal/M9037_normal.gtf
+    log: logs/M9037_normal.as.e, logs/M9037_normal.as.o
+    jobid: 41
+    wildcards: sample=M9037_normal
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M9037_normal -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9037_normal/M9037_normal.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal.Aligned.sortedByCoord.out.bam 1>logs/M9037_normal.as.o 2>logs/M9037_normal.as.e
+[Thu Jun 13 14:39:05 2019]
+Finished job 40.
+14 of 50 steps (28%) done
+
+[Thu Jun 13 14:39:05 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3023_psoriatic/M3023_psoriatic.gtf
+    log: logs/M3023_psoriatic.as.e, logs/M3023_psoriatic.as.o
+    jobid: 38
+    wildcards: sample=M3023_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M3023_psoriatic -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3023_psoriatic/M3023_psoriatic.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M3023_psoriatic.as.o 2>logs/M3023_psoriatic.as.e
+[Thu Jun 13 14:39:18 2019]
+Finished job 41.
+15 of 50 steps (30%) done
+
+[Thu Jun 13 14:39:18 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M953_psoriatic/M953_psoriatic.gtf
+    log: logs/M953_psoriatic.as.e, logs/M953_psoriatic.as.o
+    jobid: 43
+    wildcards: sample=M953_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M953_psoriatic -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M953_psoriatic/M953_psoriatic.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M953_psoriatic.as.o 2>logs/M953_psoriatic.as.e
+[Thu Jun 13 14:39:24 2019]
+Finished job 38.
+16 of 50 steps (32%) done
+
+[Thu Jun 13 14:39:24 2019]
+rule Assemble:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3822_psoriatic/M3822_psoriatic.gtf
+    log: logs/M3822_psoriatic.as.e, logs/M3822_psoriatic.as.o
+    jobid: 39
+    wildcards: sample=M3822_psoriatic
+    threads: 4
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -l M3822_psoriatic -o /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3822_psoriatic/M3822_psoriatic.gtf -p 4 /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M3822_psoriatic.as.o 2>logs/M3822_psoriatic.as.e
+[Thu Jun 13 14:39:32 2019]
+Finished job 43.
+17 of 50 steps (34%) done
+[Thu Jun 13 14:39:39 2019]
+Finished job 39.
+18 of 50 steps (36%) done
+
+[Thu Jun 13 14:39:39 2019]
+rule Merge:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3023_psoriatic/M3023_psoriatic.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3822_psoriatic/M3822_psoriatic.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9036_normal/M9036_normal.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9037_normal/M9037_normal.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9048_normal/M9048_normal.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M953_psoriatic/M953_psoriatic.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf
+    log: logs/merge.e, logs/merge.o
+    jobid: 31
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie --merge -p 1 -G /home/lixuefei/Pipeline/RNASeq/Database/hg19/hg19.exon.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3023_psoriatic/M3023_psoriatic.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M3822_psoriatic/M3822_psoriatic.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9036_normal/M9036_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9037_normal/M9037_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M9048_normal/M9048_normal.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/3.Assemble/M953_psoriatic/M953_psoriatic.gtf 1>logs/merge.o 2>logs/merge.e
+[Thu Jun 13 14:39:58 2019]
+Finished job 31.
+19 of 50 steps (38%) done
+
+[Thu Jun 13 14:39:58 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf
+    log: logs/M3023_psoriatic.quant.e, logs/M3023_psoriatic.quant.o
+    jobid: 25
+    wildcards: sample=M3023_psoriatic
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3023_psoriatic/M3023_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M3023_psoriatic.quant.o 2>logs/M3023_psoriatic.quant.e
+
+[Thu Jun 13 14:39:58 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf
+    log: logs/M9036_normal.quant.e, logs/M9036_normal.quant.o
+    jobid: 27
+    wildcards: sample=M9036_normal
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9036_normal/M9036_normal.Aligned.sortedByCoord.out.bam 1>logs/M9036_normal.quant.o 2>logs/M9036_normal.quant.e
+
+[Thu Jun 13 14:39:58 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf
+    log: logs/M9037_normal.quant.e, logs/M9037_normal.quant.o
+    jobid: 28
+    wildcards: sample=M9037_normal
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9037_normal/M9037_normal.Aligned.sortedByCoord.out.bam 1>logs/M9037_normal.quant.o 2>logs/M9037_normal.quant.e
+
+[Thu Jun 13 14:39:58 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    log: logs/M953_psoriatic.quant.e, logs/M953_psoriatic.quant.o
+    jobid: 30
+    wildcards: sample=M953_psoriatic
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M953_psoriatic/M953_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M953_psoriatic.quant.o 2>logs/M953_psoriatic.quant.e
+
+[Thu Jun 13 14:39:58 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf
+    log: logs/M9048_normal.quant.e, logs/M9048_normal.quant.o
+    jobid: 29
+    wildcards: sample=M9048_normal
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M9048_normal/M9048_normal.Aligned.sortedByCoord.out.bam 1>logs/M9048_normal.quant.o 2>logs/M9048_normal.quant.e
+[Thu Jun 13 14:40:24 2019]
+Finished job 30.
+20 of 50 steps (40%) done
+
+[Thu Jun 13 14:40:24 2019]
+rule Quantification:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic.Aligned.sortedByCoord.out.bam
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf
+    log: logs/M3822_psoriatic.quant.e, logs/M3822_psoriatic.quant.o
+    jobid: 26
+    wildcards: sample=M3822_psoriatic
+    threads: 2
+
+/home/lixuefei/Pipeline/RNASeq/Software/stringtie -e -B -p 2 -G /home/lixuefei/Pipeline/RNASeq/Test/V2/4.Merge/stringtie_merged.gtf -o /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf /home/lixuefei/Pipeline/RNASeq/Test/V2/2.Align/M3822_psoriatic/M3822_psoriatic.Aligned.sortedByCoord.out.bam 1>logs/M3822_psoriatic.quant.o 2>logs/M3822_psoriatic.quant.e
+[Thu Jun 13 14:40:26 2019]
+Finished job 25.
+21 of 50 steps (42%) done
+[Thu Jun 13 14:40:26 2019]
+Finished job 28.
+22 of 50 steps (44%) done
+[Thu Jun 13 14:40:27 2019]
+Finished job 27.
+23 of 50 steps (46%) done
+[Thu Jun 13 14:40:27 2019]
+Finished job 29.
+24 of 50 steps (48%) done
+[Thu Jun 13 14:40:43 2019]
+Finished job 26.
+25 of 50 steps (50%) done
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/t/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/t/transcript_results_0.05.csv
+    log: logs/t.diff.e, logs/t.diff.o
+    jobid: 19
+    wildcards: group=t
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/t.diff.o 2>logs/t.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/m/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/m/transcript_results_0.05.csv
+    log: logs/m.diff.e, logs/m.diff.o
+    jobid: 23
+    wildcards: group=m
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/m.diff.o 2>logs/m.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/o/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/o/transcript_results_0.05.csv
+    log: logs/o.diff.e, logs/o.diff.o
+    jobid: 15
+    wildcards: group=o
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/o.diff.o 2>logs/o.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/i/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/i/transcript_results_0.05.csv
+    log: logs/i.diff.e, logs/i.diff.o
+    jobid: 17
+    wildcards: group=i
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/i.diff.o 2>logs/i.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/n/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/n/transcript_results_0.05.csv
+    log: logs/n.diff.e, logs/n.diff.o
+    jobid: 22
+    wildcards: group=n
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/n.diff.o 2>logs/n.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/l/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/l/transcript_results_0.05.csv
+    log: logs/l.diff.e, logs/l.diff.o
+    jobid: 24
+    wildcards: group=l
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/l.diff.o 2>logs/l.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/c/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/c/transcript_results_0.05.csv
+    log: logs/c.diff.e, logs/c.diff.o
+    jobid: 20
+    wildcards: group=c
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/c.diff.o 2>logs/c.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/r/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/r/transcript_results_0.05.csv
+    log: logs/r.diff.e, logs/r.diff.o
+    jobid: 16
+    wildcards: group=r
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/r.diff.o 2>logs/r.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/s/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/s/transcript_results_0.05.csv
+    log: logs/s.diff.e, logs/s.diff.o
+    jobid: 14
+    wildcards: group=s
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/s.diff.o 2>logs/s.diff.e
+
+[Thu Jun 13 14:40:43 2019]
+rule Diff:
+    input: /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3023_psoriatic/M3023_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M3822_psoriatic/M3822_psoriatic_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9036_normal/M9036_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9037_normal/M9037_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M9048_normal/M9048_normal_merged.gtf, /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/M953_psoriatic/M953_psoriatic_merged.gtf
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/a/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/a/transcript_results_0.05.csv
+    log: logs/a.diff.e, logs/a.diff.o
+    jobid: 18
+    wildcards: group=a
+
+/home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/a.diff.o 2>logs/a.diff.e
+[Thu Jun 13 14:40:44 2019]
+[Thu Jun 13 14:40:44 2019]
+[Thu Jun 13 14:40:44 2019]
+Error in rule Diff:
+[Thu Jun 13 14:40:44 2019]
+Error in rule Diff:
+Error in rule Diff:
+[Thu Jun 13 14:40:44 2019]
+    jobid: 22
+Error in rule Diff:
+[Thu Jun 13 14:40:44 2019]
+    jobid: 14
+    jobid: 17
+[Thu Jun 13 14:40:44 2019]
+Error in rule Diff:
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/n/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/n/transcript_results_0.05.csv
+    jobid: 19
+Error in rule Diff:
+[Thu Jun 13 14:40:44 2019]
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/s/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/s/transcript_results_0.05.csv
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/i/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/i/transcript_results_0.05.csv
+Error in rule Diff:
+    jobid: 20
+    log: logs/n.diff.e, logs/n.diff.o (check log file(s) for error message)
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/t/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/t/transcript_results_0.05.csv
+    jobid: 16
+Error in rule Diff:
+    log: logs/s.diff.e, logs/s.diff.o (check log file(s) for error message)
+    log: logs/i.diff.e, logs/i.diff.o (check log file(s) for error message)
+    jobid: 24
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/c/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/c/transcript_results_0.05.csv
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/n.diff.o 2>logs/n.diff.e
+    log: logs/t.diff.e, logs/t.diff.o (check log file(s) for error message)
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/r/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/r/transcript_results_0.05.csv
+    jobid: 18
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/s.diff.o 2>logs/s.diff.e
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/i.diff.o 2>logs/i.diff.e
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/l/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/l/transcript_results_0.05.csv
+    log: logs/c.diff.e, logs/c.diff.o (check log file(s) for error message)
+
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/t.diff.o 2>logs/t.diff.e
+    log: logs/r.diff.e, logs/r.diff.o (check log file(s) for error message)
+    output: /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/a/results_genes_0.05.csv, /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/a/transcript_results_0.05.csv
+
+
+    log: logs/l.diff.e, logs/l.diff.o (check log file(s) for error message)
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/c.diff.o 2>logs/c.diff.e
+
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/r.diff.o 2>logs/r.diff.e
+    log: logs/a.diff.e, logs/a.diff.o (check log file(s) for error message)
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/l.diff.o 2>logs/l.diff.e
+
+
+    shell:
+        /home/lixuefei/Pipeline/RNASeq/Software/python /home/lixuefei/Pipeline/RNASeq/Lib/RunDiffPipe.py -c reads.lst -o /home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/ -i /home/lixuefei/Pipeline/RNASeq/Test/V2/5.Quantification/ -g psoriatic:normal 1>logs/a.diff.o 2>logs/a.diff.e
+
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 74 of /home/lixuefei/Pipeline/RNASeq/Test/V2/snakefile.txt:
+Missing files after 5 seconds:
+/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/m/results_genes_0.05.csv
+/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/m/transcript_results_0.05.csv
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 74 of /home/lixuefei/Pipeline/RNASeq/Test/V2/snakefile.txt:
+Missing files after 5 seconds:
+/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/o/results_genes_0.05.csv
+/home/lixuefei/Pipeline/RNASeq/Test/V2/6.Diff/o/transcript_results_0.05.csv
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/lixuefei/Pipeline/RNASeq/Test/V2/.snakemake/log/2019-06-13T143624.947365.snakemake.log
