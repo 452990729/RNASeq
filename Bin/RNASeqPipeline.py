@@ -165,8 +165,9 @@ def WriteSnake(argv, list_ob, Paired, lb):
     else:
         QC.UpdateInput('"'+outpath+'/0.RawData/{sample}'+lb+'"')
         QC.UpdateOutput('"'+outpath+'/1.QC/{sample}.clean.fastq"')
+        QC.UpdateThreads('2')
         QC.UpdateLog('e = "logs/{sample}.qc.e", o = "logs/{sample}.qc.o"')
-        QC.UpdateShell(r'"'+FASTP+r' -i {input} -o {output}  --adapter_sequence {adapter1} -w {threads} -j '+outpath+'/1.QC/{wildcards.sample}_QC_report.json -h '+outpath+'/1.QC/{wildcards.sample}_QC_report.html"')
+        QC.UpdateShell(r'"'+FASTP+r' -i {input} -o {output}  --adapter_sequence {adapter1} -w {threads} -j '+outpath+'/1.QC/{wildcards.sample}_QC_report.json -h '+outpath+'/1.QC/{wildcards.sample}_QC_report.html 1>{log.o} 2>{log.e}"')
     QC.WriteStr(snakefile)
 
     ### Align
