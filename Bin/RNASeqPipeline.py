@@ -142,8 +142,9 @@ def WriteSnake(argv, list_ob, Paired, lb):
     ### config file
     snakefile.write('Samples = "{}".split()\n'.format(' '.join([i.Name for i in\
                                                                 list_ob])))
-    snakefile.write('Groups = "{}".split()\n'.format(' '.join(i.replace(':', 'VS') \
-                                                             for i in re.split(',', argv['g']))))
+    if argv['g']:
+        snakefile.write('Groups = "{}".split()\n'.format(' '.join(i.replace(':', 'VS') \
+                                                                 for i in re.split(',', argv['g']))))
     snakefile.write('adapter1 = "{}"\nadapter2 = "{}"\n'.format(argv['a1'], argv['a2']))
 
     ###all
